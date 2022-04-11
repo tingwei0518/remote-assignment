@@ -1,0 +1,148 @@
+/*body*/
+body{
+	width: 100%;
+	text-align: center;
+	font: 'Raleway', sans-serif;
+}
+
+/*nav*/
+ul{
+	list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+	background-color: lightgray;
+	margin: 0px;
+	border-top: 1rem solid lightgray;
+	border-bottom: 1rem solid lightgray;
+}
+
+li:first-child{
+	margin-right: auto;
+}
+
+li{
+	margin-right: 2.5rem;
+}
+
+@media screen and (min-width: 800px){
+	#icon {
+  		display: none;
+	}
+}
+@media screen and (max-width: 799.99px){
+	.item{
+		display: none;
+	}
+
+    #icon {
+    	float: right;
+    	display: block;
+  	}
+}
+
+/*header*/
+.cover{
+	background-color: lightblue;
+	height: 200px;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	font-size: 2rem;
+}
+
+p{
+	font-size: 1.3rem;
+	margin: 20px;		
+}
+
+/*container*/
+.box{
+	background-color: lightblue;
+	height: 150px;
+	margin: 0 8px 1rem 8px;
+}
+
+.box p{
+	font-size: .95rem;
+	margin: .8rem;
+}
+
+@media screen and (min-width: 1200px){
+	.row{
+		width: 1200px;
+		display: flex;
+		justify-content: space-between;
+		box-sizing: border-box;
+		margin: auto;
+	}
+
+	.box{
+		width: 584px;
+	}
+
+    /*子margin超出父*/
+	.box p{
+		margin-top: 0;
+		padding-top:.8rem;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1199.99px){	
+	.row{
+		width: 90%;
+		display: flex;
+		justify-content: space-between;
+		box-sizing: border-box;
+		margin: auto;
+	}
+
+	.box{
+		flex: 1 0 200px;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 799.99px){
+	.row{
+		width: 90%;
+		display: flex;
+		justify-content: space-between;
+		box-sizing: border-box;
+		margin: auto;
+	}
+	.box{
+		flex: 1 0 200px;
+	}	
+}
+
+@media screen and (max-width: 499.99px){
+	.container{
+		width: 97%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		box-sizing: border-box;
+		flex-wrap: wrap;
+		margin: auto;
+	}
+	.box{
+		width: 97%;
+		margin-right: auto;
+		margin-left: auto;	
+	}
+
+	/*子margin超出父*/
+	.box p{
+		margin-top: 0;
+		padding-top:.8rem;
+	}
+}
+
+/*footer*/
+#actionButton {
+	margin: 1rem auto;
+	background-color: lightblue;
+  	border: none;
+  	padding: 15px 32px;
+  	text-decoration: none;
+  	display: inline-block;
+}
