@@ -1,0 +1,10 @@
+doctype html
+html
+    head
+        link(rel='stylesheet' type='text/css' href='style.css')
+        title My Name
+    body
+        h1 What is your name ?
+        form(action = "/myName", method = "post")
+            input#enterNamer(type='text', name="username", placeholder='name')
+            button#enterBtn(type='submit') Enter
