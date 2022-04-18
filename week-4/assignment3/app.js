@@ -1,19 +1,40 @@
 class Nav extends React.Component{
+    state = {
+        floatBlock:{
+            display:''
+        },
+        closeButton : {
+            display:''
+        }
+    }
+    
     openMenu = () => {
-        document.getElementById('floatBlock').style.display='block'
-        document.getElementById('closeButton').style.display='block'
+        this.setState({
+                floatBlock:{
+                    display:'block'
+                },
+                closeButton : {
+                    display:'block'
+                }
+            })
     }
 
     closeMenu = () => {
-        document.getElementById('floatBlock').style.display=''
-        document.getElementById('closeButton').style.display=''
+        this.setState({
+            floatBlock:{
+                display:''
+            },
+            closeButton : {
+                display:''
+            }
+        })
     }
    
     render() {
         return (
             <nav>
                 <p>Website Tittle / Logo</p>
-                <ul id="floatBlock">
+                <ul id="floatBlock" style={this.state.floatBlock}>
                     <li className="item">Item1</li>
                     <li className="item">Item2</li>
                     <li className="item">Item3</li>
@@ -22,13 +43,14 @@ class Nav extends React.Component{
                 <div id="menuIcon" onClick={this.openMenu}>
                     <img src="img/menu_icon.png" alt="menu" width="30" height="20" />
                 </div>
-                <div id="closeButton" onClick={this.closeMenu}>
+                <div id="closeButton" onClick={this.closeMenu} style={this.state.closeButton}>
                     <img src="img/close_button.png" alt="close" width="15" height="15" />
                 </div>
             </nav>
         );
     }
   }
+
 class Header extends React.Component{
     state = {
         title : "Welcome Message!"
@@ -81,15 +103,25 @@ const ContentBox = (props) => {
         </div>
     );
 }
-class HiddenContentBox extends React.Component{   
+
+class HiddenContentBox extends React.Component{  
+    state = {
+        hiddenContainer:{
+            display:'none'
+        }
+    } 
     showContentBox = () => {
-        document.getElementById('hiddenContainer').style.display=''
+        this.setState({
+            hiddenContainer:{
+                display:''
+            }
+        })
     }
     render() {
         return (
             <div>
                 <button type="button" id="actionButton" onClick={this.showContentBox}>Call to Action</button>
-                <div id="hiddenContainer" style={{display:"none"}}>
+                <div id="hiddenContainer" style={this.state.hiddenContainer}>
                     <div className="row">
                         <div id="box5" className="box">
                             <p>Content Box 5</p>
